@@ -21,6 +21,9 @@ const StyledMenu = styled.div`
     ul {
         display: flex;
         gap: 30px;
-        
+    }
+    
+    ul li a {
+        color: white;
     }
 `

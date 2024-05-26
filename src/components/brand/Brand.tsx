@@ -5,8 +5,8 @@ import {FlexWrapper} from "../FlexWrapper";
 
 export const Brand = () => {
     return (
-        <FlexWrapper align={"center"}>
-            <Icon iconId={"briefcase"} viewBox="0 0 512 512"/>
+        <FlexWrapper align={"center"} gap={"13px"}>
+            <Icon iconId={"briefcase"} viewBox="0 0 512 512" height={"47"} width={"47"}/>
             <BrandName>Portfolio</BrandName>
         </FlexWrapper>
     );
