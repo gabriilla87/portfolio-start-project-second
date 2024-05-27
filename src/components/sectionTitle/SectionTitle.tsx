@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
-export const SectionTitle = styled.h2`
-    
+type SectionTitlePropsType = {
+    align?: string
+}
+
+export const SectionTitle = styled.h2<SectionTitlePropsType>`
+    text-align: ${props => props.align || "start"};
 `
