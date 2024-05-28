@@ -8,6 +8,7 @@ type FlexWrapperPropsType = {
     gap?: string
     column?: number
     columnWidth?: string
+    margin?: string
 }
 
 export const FlexWrapper = styled.div<FlexWrapperPropsType>`

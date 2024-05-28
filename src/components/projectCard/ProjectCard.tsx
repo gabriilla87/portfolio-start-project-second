@@ -27,7 +27,7 @@ const StyledProjectCard = styled.div`
     margin: 10px;
 `
 
-const CardTitle = styled.h2`
+const CardTitle = styled.h3`
     text-align: center;
 `
 
