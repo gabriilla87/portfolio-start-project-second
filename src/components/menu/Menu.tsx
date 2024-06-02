@@ -20,10 +20,11 @@ export const Menu = (props: {menuItems: Array<string>}) => {
 const StyledMenu = styled.nav`
     ul {
         display: flex;
-        gap: 30px;
+        gap: 80px;
     }
     
     ul li a {
-        color: white;
+        font-size: 16px;
+        font-weight: 500;
     }
 `

@@ -6,4 +6,7 @@ type SectionTitlePropsType = {
 
 export const SectionTitle = styled.h2<SectionTitlePropsType>`
     text-align: ${props => props.align || "start"};
+    font-size: 46px;
+    font-weight: 600;
+    margin-bottom: 70px;
 `
