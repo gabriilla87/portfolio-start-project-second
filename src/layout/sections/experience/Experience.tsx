@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/sectionTitle/SectionTitle";
 import {Container} from "../../../components/Container";
+import {theme} from "../../../styles/Theme";
 
 
 export const Experience = () => {
@@ -79,12 +80,13 @@ const YearsList = styled.div`
     &::after {
         top: 39px;
         content: "";
-        width: calc(100% - 260px);
+        width: 77%;
         height: 10px;
-        left: 120px;
+        left: 50%;
+        transform: translateX(-50%);
         position: absolute;
         border-radius: 83px;
-        background: linear-gradient(270deg, #13ADC7 0%, #6978D1 66.67%, #945DD6 100%);
+        background: ${theme.colors.gradient};
         z-index: 2;
     }
 `

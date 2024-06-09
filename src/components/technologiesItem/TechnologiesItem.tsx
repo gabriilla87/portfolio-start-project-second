@@ -23,7 +23,7 @@ export const TechnologiesItem = (props: TechnologiesItemPropsType) => {
 };
 
 const StyledTechnologiesItem = styled.div`
-    width: 900px;
+    width: 100%;
 
     &:nth-child(n + 2) {
         margin-top: 25px;

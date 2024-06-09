@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import Portrait from "../../../assets/portrait.jpg";
+import BgImage from "../../../assets/bgImage.png";
 import {Container} from "../../../components/Container";
 import {StyledLink} from "../../../components/StyledLink";
 import {theme} from "../../../styles/Theme";
@@ -10,7 +11,7 @@ export const Hero = () => {
     return (
         <StyledHero>
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"}>
+                <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                     <HeroInfo>
                         <FlexWrapper direction={"column"}>
                             <Name>Lorem ipsum dolor amet</Name>
@@ -19,12 +20,14 @@ export const Hero = () => {
                                 labore
                                 et dolore magna aliqua.
                             </Text>
-                            <StyledLink name={"Let's Begin"}/>
+                            <StyledLink isShouldDisappear={true} name={"Let's Begin"}/>
                         </FlexWrapper>
                     </HeroInfo>
 
                     <ImageWrapper>
-                        <StyledPortrait src={Portrait} alt={"It's me!!!"}/>
+                        <ImageBorder>
+                            <StyledPortrait src={Portrait} alt={"It's me!!!"}/>
+                        </ImageBorder>
                     </ImageWrapper>
                 </FlexWrapper>
             </Container>
@@ -32,32 +35,64 @@ export const Hero = () => {
     );
 };
 
+
 const StyledHero = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: clip;
+    padding-top: 125px;
     
-    & {
-        padding-top: 225px;
+    ${Container} > ${FlexWrapper} {
+        @media ${theme.media.desktop} {
+            justify-content: center;
+            flex-direction: column;
+            
+        }
     }
 `
 
+const StyledPortrait = styled.img`
+    max-width: 380px;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50px 0;
+`
+
 const ImageWrapper = styled.div`
-    width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 390px;
+    width: 100%;
     height: 460px;
+    
+    position: relative;
+    z-index: 0;
+    
+    &::after {
+        content: url(${BgImage});
+        max-width: 666px;
+        width: 100%;
+        max-height: 666px;
+        height: 100%;
+        
+        position: absolute;
+        z-index: -1;
+        top: 66px;
+        left: -9px;
+    }
+`
+
+const ImageBorder = styled.div`
+    width: 100%;
+    height: 100%;
     border-radius: 50px 0;
     background: ${theme.colors.gradient};
     display: flex;
     align-items: center;
     justify-content: center;
-`
-
-const StyledPortrait = styled.img`
-    width: 380px;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 50px 0;
- 
 `
 
 const HeroInfo = styled.div`

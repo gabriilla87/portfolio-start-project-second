@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {Menu} from "../../components/menu/Menu";
+import {HeaderMenu} from "./headerMenu/HeaderMenu";
 import {SocialIcons} from "../../components/socialIcons/SocialIcons";
 import {Icon} from "../../components/icon/Icon";
 import {theme} from "../../styles/Theme";
 import {Container} from "../../components/Container";
+import {MobileMenu} from "./mobileMenu/MobileMenu";
 
 const LinksList = ["Projects", "Technologies", "About me"]
 
@@ -15,8 +16,9 @@ export const Header = () => {
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Icon iconId={"brand"} width="185" height="48" viewBox="0 0 185 48"/>
-                    <Menu menuItems={LinksList}/>
-                    <SocialIcons/>
+                    <HeaderMenu menuItems={LinksList}/>
+                    <MobileMenu menuItems={LinksList}/>
+                    <SocialIcons isShouldDisappear={true}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -32,4 +34,6 @@ const StyledHeader = styled.header`
     right: 0;
     padding: 26px 0;
     z-index: 99999;
+    
+    
 `
